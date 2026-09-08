@@ -2,7 +2,7 @@
   "name": "aac-audio-preview",
   "displayName": "AAC Audio Preview",
   "description": "Play AAC/MP4/M4A audio inside VS Code, which ships without an AAC decoder, by transcoding with your local ffmpeg.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "livshitz",
   "engines": {
     "vscode": "^1.80.0"
@@ -83,5 +83,10 @@
     "type": "git",
     "url": "https://github.com/Livshitz/vscode-aac-audio-preview.git"
   },
-  "activationEvents": []
+  "activationEvents": [],
+  "icon": "icon.png",
+  "bugs": {
+    "url": "https://github.com/Livshitz/vscode-aac-audio-preview/issues"
+  },
+  "homepage": "https://github.com/Livshitz/vscode-aac-audio-preview#readme"
 }

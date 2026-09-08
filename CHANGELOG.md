@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.1
+
+- Added an extension icon.
+- Repository is now public; added homepage and issues links.
+
 ## 0.1.0
 
 - Initial release: custom editor for `.mp4` / `.m4a` / `.aac` / `.mov` audio.
