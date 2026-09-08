@@ -1,0 +1,87 @@
+{
+  "name": "aac-audio-preview",
+  "displayName": "AAC Audio Preview",
+  "description": "Play AAC/MP4/M4A audio inside VS Code, which ships without an AAC decoder, by transcoding with your local ffmpeg.",
+  "version": "0.1.0",
+  "publisher": "livshitz",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "aacAudioPreview.player",
+        "displayName": "Audio Preview (AAC)",
+        "selector": [
+          {
+            "filenamePattern": "*.mp4"
+          },
+          {
+            "filenamePattern": "*.m4a"
+          },
+          {
+            "filenamePattern": "*.aac"
+          },
+          {
+            "filenamePattern": "*.mov"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "configuration": {
+      "title": "AAC Audio Preview",
+      "properties": {
+        "aacAudioPreview.ffmpegPath": {
+          "type": "string",
+          "default": "ffmpeg",
+          "description": "Path to the ffmpeg binary."
+        },
+        "aacAudioPreview.bitrate": {
+          "type": "string",
+          "default": "64k",
+          "description": "Opus bitrate used for the in-memory transcode."
+        },
+        "aacAudioPreview.format": {
+          "type": "string",
+          "enum": [
+            "wav",
+            "ogg"
+          ],
+          "default": "wav",
+          "description": "Transcode target. 'wav' (PCM) is the most compatible with the VS Code webview; 'ogg' (Opus) is far smaller but is rejected by some builds."
+        },
+        "aacAudioPreview.sampleRate": {
+          "type": "number",
+          "default": 24000,
+          "description": "Sample rate for WAV output. 16000 is fine for speech and halves the file size."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "aacAudioPreview.clearCache",
+        "title": "Audio Preview: Clear Transcode Cache"
+      }
+    ]
+  },
+  "license": "MIT",
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "audio",
+    "aac",
+    "m4a",
+    "mp4",
+    "ffmpeg",
+    "preview",
+    "player"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Livshitz/vscode-aac-audio-preview.git"
+  },
+  "activationEvents": []
+}
